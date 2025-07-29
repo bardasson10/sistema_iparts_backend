@@ -1,0 +1,65 @@
+// Declaração dos plugins essenciais para um projeto Spring Boot
+plugins {
+    id 'java' // Plugin base para compilação de código Java
+    id 'org.springframework.boot' version '3.3.4' // Plugin do Spring Boot para gerenciamento de dependências e build
+    id 'io.spring.dependency-management' version '1.1.5' // Plugin para gerenciar as versões das dependências, similar ao <dependencyManagement> do Maven
+}
+
+// Configurações do projeto
+group = 'br.com'
+version = '12.6.1'
+sourceCompatibility = '17' // Define a versão do Java para o código-fonte
+
+// Repositórios de onde o Gradle vai baixar as dependências
+repositories {
+    mavenCentral() // O repositório central do Maven, que é o padrão
+}
+
+// Lista de todas as dependências do projeto
+dependencies {
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.data:spring-data-commons:3.3.4'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.hibernate.validator:hibernate-validator'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Banco de Dados
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // MapStruct (Mapeamento de objetos)
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final' // O processador de anotações
+
+    // Documentação da API (Swagger/OpenAPI)
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+
+    // JWT (JSON Web Tokens)
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+    // Dependências do Jakarta
+    implementation 'jakarta.servlet:jakarta.servlet-api'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api'
+
+    // Testes
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// Configuração específica para o compilador Java
+tasks.withType(JavaCompile).configureEach {
+    // Garante que os arquivos sejam lidos e escritos com a codificação UTF-8
+    options.encoding = 'UTF-8'
+
+    // Configuração crucial para o MapStruct se integrar com o Spring
+    // Equivalente ao <compilerArg>-Amapstruct.defaultComponentModel=spring</compilerArg> no Maven
+    options.compilerArgs.add('-Amapstruct.defaultComponentModel=spring')
+}
+
+// Configuração para a execução de testes
+tasks.named('test') {
+    useJUnitPlatform() // Habilita o suporte ao JUnit 5
+}

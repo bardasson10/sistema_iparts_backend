@@ -2,7 +2,6 @@ package br.com.estoque.iparts.application.service;
 
 
 import br.com.estoque.iparts.application.domain.model.Departamento;
-import br.com.estoque.iparts.application.domain.model.Role;
 import br.com.estoque.iparts.application.domain.model.User;
 import br.com.estoque.iparts.application.ports.in.CreateUserUseCase;
 import br.com.estoque.iparts.application.ports.out.DepartamentoRepositoryPort;
@@ -40,7 +39,7 @@ public class CreateUserServiceImpl  implements CreateUserUseCase {
                 request.email(),
                 senhaCriptografada,
                 request.perfil(),
-                departamento
+                departamento.getId()
         );
 
         return userRepository.salvar(novoUsuario);

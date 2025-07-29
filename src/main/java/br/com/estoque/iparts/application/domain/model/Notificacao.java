@@ -12,7 +12,7 @@ public class Notificacao {
     private StatusEnum status;
     private RoleEnum tipoDeUsuario;
     private LocalDateTime data ;
-    private Integer IdUsuario;
+    private Integer idUsuario;
 
     public Notificacao() {
     }
@@ -23,7 +23,7 @@ public class Notificacao {
         this.status = status;
         this.tipoDeUsuario = tipoDeUsuario;
         this.data = LocalDateTime.now();
-        this.IdUsuario = IdUsuario;
+        this.idUsuario = IdUsuario;
     }
 
     public Integer getId() {
@@ -74,11 +74,11 @@ public class Notificacao {
         this.data = data;
     }
 
-    public Integer getIdusuario() {
-        return IdUsuario;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setIdusuario(Integer idUsuario) {
-        IdUsuario = idUsuario;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

@@ -12,10 +12,10 @@ public record CreateUserRequest(
         String nome,
 
         @NotBlank(message = "O email não pode ser vazio")
-        @Pattern(
-                regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$!%*?&])[A-Za-z\\d@$#!%*?&]{8,}$",
-                message = "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial."
-        )
+//        @Pattern(
+//                regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$!%*?&])[A-Za-z\\d@$#!%*?&]{8,}$",
+//                message = "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial."
+//        )
         @Email(message = "Formato de email inválido")
         String email,
 
@@ -23,7 +23,7 @@ public record CreateUserRequest(
         @Size(min = 8, message = "A senha deve ter no mínimo 8 caracteres")
         String senha,
 
-        @NotBlank(message = "O perfil não pode ser vazio")
+        @NotEmpty(message = "O usuário deve ter pelo menos um perfil.")
         Set<Role> perfil,
 
         @NotNull(message = "O ID do departamento é obrigatório")
