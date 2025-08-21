@@ -12,12 +12,15 @@ import java.util.Optional;
 @Component
 public class DepartamentoRepositoryAdapter implements DepartamentoRepositoryPort {
 
-    @Autowired
-    private  DepartamentoSpringDataRepository jpaRepository;
-    @Autowired
-    private  DepartamentoPersistenceMapper mapper;
 
+    private final DepartamentoSpringDataRepository jpaRepository;
 
+    private final  DepartamentoPersistenceMapper mapper;
+
+    public  DepartamentoRepositoryAdapter(DepartamentoSpringDataRepository jpaRepository, DepartamentoPersistenceMapper mapper) {
+        this.jpaRepository = jpaRepository;
+        this.mapper = mapper;
+    }
     @Override
     public Departamento salvar(Departamento departamento) {
         var departamentoEntity = mapper.toEntity(departamento);
@@ -30,6 +33,13 @@ public class DepartamentoRepositoryAdapter implements DepartamentoRepositoryPort
         return jpaRepository.findById(id)
                 .map(mapper::toDomain);
     }
+
+    @Override
+    public Optional<Departamento> buscarPorNome(String nome) {
+        return jpaRepository.findByNome(nome)
+                .map(mapper::toDomain);
+    }
+
 
     @Override
     public boolean existePorNome(String nome) {

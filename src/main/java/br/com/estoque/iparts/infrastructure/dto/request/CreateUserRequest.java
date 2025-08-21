@@ -24,7 +24,7 @@ public record CreateUserRequest(
         String senha,
 
         @NotEmpty(message = "O usuário deve ter pelo menos um perfil.")
-        Set<Role> perfil,
+        Set<String> perfil,
 
         @NotNull(message = "O ID do departamento é obrigatório")
         Integer departamentoId

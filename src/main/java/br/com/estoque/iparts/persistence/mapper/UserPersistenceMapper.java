@@ -16,12 +16,12 @@ import org.mapstruct.ReportingPolicy;
 )
 public interface UserPersistenceMapper {
     // Mapeando Departamento e Roles para a entidade
-    @Mapping(source = "departamento", target = "fkDepartamento.id")
+    @Mapping(source = "departamento", target = "fkDepartamento")
     @Mapping(source = "roles", target = "roles")
     UserJpaEntity toEntity(User domain);
 
     // Mapeando Departamento e Roles de volta para o domínio
-    @Mapping(source = "fkDepartamento.id", target = "departamento")
+    @Mapping(source = "fkDepartamento", target = "departamento")
     @Mapping(source = "roles", target = "roles")
     User toDomain(UserJpaEntity entity);
 

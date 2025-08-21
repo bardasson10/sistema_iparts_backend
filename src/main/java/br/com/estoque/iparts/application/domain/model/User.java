@@ -14,15 +14,15 @@ public class User {
     private LocalDateTime dataUltimaSenha;
     private StatusEnum status;
     private Set<Role> roles;
-    private Integer idDepartamento;
+    private Departamento departamento;
 
-    public User(String nome, String email, String senha, Set<Role> roles, Integer idDepartamento) {
+    public User(String nome, String email, String senha, Set<Role> roles, Departamento departamento) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.dataUltimaSenha = LocalDateTime.now();
         this.roles = roles;
-        this.idDepartamento = idDepartamento;
+        this.departamento= departamento;
         this.status = StatusEnum.inativo;
     }
 
@@ -100,11 +100,11 @@ public class User {
         this.roles = roles;
     }
 
-    public Integer getDepartamento() {
-        return idDepartamento;
+    public Departamento getDepartamento() {
+        return departamento;
     }
 
-    public void setDepartamento(Integer idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    public void setDepartamento(Departamento departamentoepartamento) {
+        this.departamento = departamentoepartamento;
     }
 }

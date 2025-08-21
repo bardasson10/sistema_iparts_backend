@@ -4,7 +4,7 @@ import br.com.estoque.iparts.security.enums.StatusEnum;
 
 import java.util.Set;
 
-public record UserReponse(
+public record UserResponse(
         Integer id,
         String nome,
         String email,
