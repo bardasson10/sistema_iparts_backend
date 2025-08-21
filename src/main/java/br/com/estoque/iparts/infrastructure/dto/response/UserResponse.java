@@ -10,5 +10,5 @@ public record UserResponse(
         String email,
         StatusEnum status,
         DepartamentoResponse departamento,
-        Set<String> roles
+        Set<String> perfis
 ) { }

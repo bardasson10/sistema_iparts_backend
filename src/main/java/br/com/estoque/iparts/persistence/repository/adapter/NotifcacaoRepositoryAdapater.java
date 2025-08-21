@@ -5,9 +5,11 @@ import br.com.estoque.iparts.application.ports.out.NotificacaoRepositoryPort;
 import br.com.estoque.iparts.persistence.mapper.NotificacaoPersistenceMapper;
 import br.com.estoque.iparts.persistence.repository.jpa.NotificacaoSpringDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class NotifcacaoRepositoryAdapater  implements NotificacaoRepositoryPort {
 
     @Autowired
