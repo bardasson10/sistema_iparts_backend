@@ -19,7 +19,7 @@ public interface UserDTOMapper { // 2. Transformado em interface
 
 
     @Mapping(source = "fkDepartamento", target = "departamento")
-    @Mapping(source = "roles", target = "perfis")
+    @Mapping(source = "roles", target = "roles")
     UserResponse toResponse(UserJpaEntity entity);
 
     // O método auxiliar para as roles continua igual
