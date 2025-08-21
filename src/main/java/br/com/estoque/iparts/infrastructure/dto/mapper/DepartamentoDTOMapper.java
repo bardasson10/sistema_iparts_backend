@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface DepartamentoDTOMapper {
-    // Como os campos (id, nome) têm nomes iguais, o MapStruct faz tudo sozinho
+
     DepartamentoResponse toResponse(DepartamentoJpaEntity entity);
 }

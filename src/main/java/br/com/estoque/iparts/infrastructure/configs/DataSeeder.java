@@ -28,27 +28,12 @@ public class DataSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Iniciando o seeder de dados...");
-        seedDepartamentos();
         seedRoles();
+        seedDepartamentos();
+
         // Você pode chamar outros métodos de seed aqui, como seedRoles(), seedAdminUser(), etc.
         log.info("Seeder de dados finalizado.");
     }
-
-    private void seedDepartamentos() {
-        String nomeDepartamento = "Desenvolvimento";
-        // Verifica se o departamento já não existe para não criar duplicatas
-        if (!departamentoRepository.existePorNome(nomeDepartamento)) {
-            log.info("Departamento '{}' não encontrado, criando...", nomeDepartamento);
-            Departamento devDepartamento = new Departamento();
-            devDepartamento.setNome(nomeDepartamento);
-
-            departamentoRepository.salvar(devDepartamento);
-            log.info("Departamento '{}' criado com sucesso.", nomeDepartamento);
-        } else {
-            log.info("Departamento '{}' já existe. Nenhuma ação necessária.", nomeDepartamento);
-        }
-    }
-
 
     private void seedRoles(){
         String nomeRoleAdmin = "ROLE_ADMIN";
@@ -75,4 +60,22 @@ public class DataSeeder implements CommandLineRunner {
         }
 
     }
+
+    private void seedDepartamentos() {
+        String nomeDepartamento = "Desenvolvimento";
+        // Verifica se o departamento já não existe para não criar duplicatas
+        if (!departamentoRepository.existePorNome(nomeDepartamento)) {
+            log.info("Departamento '{}' não encontrado, criando...", nomeDepartamento);
+            Departamento devDepartamento = new Departamento();
+            devDepartamento.setNome(nomeDepartamento);
+
+            departamentoRepository.salvar(devDepartamento);
+            log.info("Departamento '{}' criado com sucesso.", nomeDepartamento);
+        } else {
+            log.info("Departamento '{}' já existe. Nenhuma ação necessária.", nomeDepartamento);
+        }
+    }
+
+
+
 }
