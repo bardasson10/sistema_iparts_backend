@@ -1,24 +1,54 @@
-# Compiled class file
-*.class
+# ===================================================================
+# Arquivos gerados pelo IntelliJ IDEA
+# ===================================================================
+# Pasta de configuração do projeto (não deve ser compartilhada)
+.idea/
 
-# Log file
-*.log
+# Arquivos de módulo do IntelliJ
+*.iml
 
-# BlueJ files
-*.ctxt
+# Pasta de saída de compilação padrão do IntelliJ (caso não use o 'build' do Gradle)
+out/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
-# Package Files #
+# ===================================================================
+# Arquivos gerados pelo Gradle
+# ===================================================================
+# Cache e metadados específicos do projeto
+.gradle/
+
+# Pasta principal de saída de builds, testes e artefatos
+build/
+
+
+# ===================================================================
+# Artefatos de Build
+# (Geralmente já cobertos pela pasta 'build/', mas é bom garantir)
+# ===================================================================
 *.jar
 *.war
-*.nar
 *.ear
+*.nar
+
+
+# ===================================================================
+# Logs
+# ===================================================================
+*.log
+logs/
+
+
+# ===================================================================
+# Logs de Crash da Máquina Virtual Java (JVM)
+# ===================================================================
+hs_err_pid*
+replay_pid*
+
+
+# ===================================================================
+# Arquivos Diversos
+# (Alguns da sua lista original)
+# ===================================================================
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
