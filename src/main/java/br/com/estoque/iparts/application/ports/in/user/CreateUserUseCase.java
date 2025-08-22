@@ -1,6 +1,5 @@
-package br.com.estoque.iparts.application.ports.in;
+package br.com.estoque.iparts.application.ports.in.user;
 
-import br.com.estoque.iparts.application.domain.model.User;
 import br.com.estoque.iparts.infrastructure.dto.request.CreateUserRequest;
 import br.com.estoque.iparts.infrastructure.dto.response.UserResponse;
 

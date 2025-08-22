@@ -1,10 +1,10 @@
-package br.com.estoque.iparts.application.service;
+package br.com.estoque.iparts.application.service.user;
 
 
 import br.com.estoque.iparts.application.domain.model.Departamento;
 import br.com.estoque.iparts.application.domain.model.Role;
 import br.com.estoque.iparts.application.domain.model.User;
-import br.com.estoque.iparts.application.ports.in.CreateUserUseCase;
+import br.com.estoque.iparts.application.ports.in.user.CreateUserUseCase;
 import br.com.estoque.iparts.application.ports.out.DepartamentoRepositoryPort;
 import br.com.estoque.iparts.application.ports.out.PasswordEncoderPort;
 import br.com.estoque.iparts.application.ports.out.RoleRepositositoryPort;
@@ -13,14 +13,13 @@ import br.com.estoque.iparts.infrastructure.dto.mapper.UserDTOMapper;
 import br.com.estoque.iparts.infrastructure.dto.request.CreateUserRequest;
 import br.com.estoque.iparts.infrastructure.dto.response.UserResponse;
 import br.com.estoque.iparts.persistence.repository.jpa.UserSpringDataRepository;
-import br.com.estoque.iparts.security.enums.RoleEnum;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
+@Service
 public class CreateUserServiceImpl  implements CreateUserUseCase {
 
     private final UserRepositoryPort userRepository;
@@ -33,10 +32,10 @@ public class CreateUserServiceImpl  implements CreateUserUseCase {
 
     public CreateUserServiceImpl(
             UserRepositoryPort userRepository,
-             DepartamentoRepositoryPort departamentoRepository,
-             RoleRepositositoryPort roleRepository,
-             PasswordEncoderPort passwordEncoder,
-             UserDTOMapper userDTOMapper,
+            DepartamentoRepositoryPort departamentoRepository,
+            RoleRepositositoryPort roleRepository,
+            PasswordEncoderPort passwordEncoder,
+            UserDTOMapper userDTOMapper,
             UserSpringDataRepository userSpringDataRepository)
     {
         this.userRepository = userRepository;
@@ -82,8 +81,6 @@ public class CreateUserServiceImpl  implements CreateUserUseCase {
         var response = userDTOMapper.toResponse(userEntity);
 
         return response;
-
-
 
     }
 }

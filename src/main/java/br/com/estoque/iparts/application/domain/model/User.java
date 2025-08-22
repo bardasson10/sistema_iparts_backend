@@ -26,6 +26,8 @@ public class User {
         this.status = StatusEnum.inativo;
     }
 
+
+
     //logica de negocio
 
     public void  inativar() {
@@ -33,6 +35,13 @@ public class User {
             throw new RuntimeException("Usuario ja esta inativo");
         }
         this.status = StatusEnum.inativo;
+    }
+
+    public void ativar() {
+        if (this.status == StatusEnum.ativo) {
+            throw new RuntimeException("Usuario ja esta ativo");
+        }
+        this.status = StatusEnum.ativo;
     }
 
     public void alterarSenha(String novaSenhaCripografada){

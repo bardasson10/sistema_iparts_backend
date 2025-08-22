@@ -8,6 +8,10 @@ import br.com.estoque.iparts.persistence.repository.jpa.UserSpringDataRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Component
 public class UserRepositoryAdapter implements UserRepositoryPort {
 
@@ -33,4 +37,23 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
         return jpaRepository.existsByEmail(email);
     }
 
+    @Override
+    public Optional<User> buscarPorEmail(String email) {
+        return jpaRepository.findByEmail(email)
+                .map(mapper::toDomain);
+    }
+
+    @Override
+    public Optional<User> buscarPorId(Integer id) {
+        return jpaRepository.findById(id)
+                .map(mapper::toDomain);
+    }
+
+    @Override
+    public List<User> buscarTodos() {
+        return jpaRepository.findAllWithDepartamento()
+                .stream()
+                .map(mapper::toDomain)
+                .collect(Collectors.toList());
+    }
 }
