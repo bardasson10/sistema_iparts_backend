@@ -41,6 +41,19 @@
     </system>
   </component>
   <component name="RunManager">
+    <configuration name="IpartsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.estoque.iparts.IpartsApplication" />
+      <module name="Estoque_Iparts.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.estoque.iparts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Estoque_Iparts" />
       <method v="2">
@@ -54,6 +67,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.IpartsApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <servers />
