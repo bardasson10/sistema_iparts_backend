@@ -17,6 +17,7 @@ out/
 # Cache e metadados específicos do projeto
 .gradle/
 
+
 # Pasta principal de saída de builds, testes e artefatos
 build/
 
@@ -52,3 +53,25 @@ replay_pid*
 *.zip
 *.tar.gz
 *.rar
+*.lock
+.gradle/8.8/checksums/checksums.lock
+.gradle/8.8/dependencies-accessors/gc.properties
+.gradle/8.8/executionHistory/executionHistory.bin
+.gradle/8.8/executionHistory/executionHistory.lock
+.gradle/8.8/fileChanges/last-build.bin
+.gradle/8.8/fileHashes/fileHashes.bin
+.gradle/8.8/fileHashes/fileHashes.lock
+.gradle/8.8/gc.properties
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/buildOutputCleanup/cache.properties
+.gradle/buildOutputCleanup/outputFiles.bin
+.gradle/vcs-1/gc.properties
+.idea/workspace.xml
+build/generated/sources/annotationProcessor/java/main/br/com/estoque/iparts/infrastructure/dto/mapper/DepartamentoDTOMapperImpl.java
+build/generated/sources/annotationProcessor/java/main/br/com/estoque/iparts/infrastructure/dto/mapper/UserDTOMapperImpl.java
+build/generated/sources/annotationProcessor/java/main/br/com/estoque/iparts/persistence/mapper/DepartamentoPersistenceMapperImpl.java
+build/generated/sources/annotationProcessor/java/main/br/com/estoque/iparts/persistence/mapper/NotificacaoPersistenceMapperImpl.java
+build/generated/sources/annotationProcessor/java/main/br/com/estoque/iparts/persistence/mapper/RolePersistenceMapperImpl.java
+build/generated/sources/annotationProcessor/java/main/br/com/estoque/iparts/persistence/mapper/UserPersistenceMapperImpl.java
+build/resources/main/application.properties
+build/tmp/compileJava/previous-compilation-data.bin
